@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/Users/vallard/Desktop/gotraining/04-packaging_exporting/exercises/template1/toy'
+let g:netrw_dirhist_2='/Users/vallard/Code/Go/src/github.com/vallard/twitter-client/twitstream'
+let g:netrw_dirhist_3='/Users/vallard/Code/Go/src/github.com/vallard/stickypipe-receiver/app'
