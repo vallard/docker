@@ -10,18 +10,21 @@ RUN pip install python-novaclient python-keystoneclient python-cinderclient pyth
 RUN service ssh start
 
 # Add the users
-RUN useradd -p $(openssl passwd -1 Cisco.123) user01
-RUN useradd -p $(openssl passwd -1 Cisco.123) user02
-RUN useradd -p $(openssl passwd -1 Cisco.123) user03
-RUN useradd -p $(openssl passwd -1 Cisco.123) user04
-RUN useradd -p $(openssl passwd -1 Cisco.123) user05
-RUN useradd -p $(openssl passwd -1 Cisco.123) user06
-RUN useradd -p $(openssl passwd -1 Cisco.123) user07
-RUN useradd -p $(openssl passwd -1 Cisco.123) user08
-RUN useradd -p $(openssl passwd -1 Cisco.123) user09
-RUN useradd -p $(openssl passwd -1 Cisco.123) user10
+RUN useradd -m -p $(openssl passwd -1 Cisco.123) user01
+RUN useradd -m -p $(openssl passwd -1 Cisco.123) user02
+RUN useradd -m -p $(openssl passwd -1 Cisco.123) user03
+RUN useradd -m -p $(openssl passwd -1 Cisco.123) user04
+RUN useradd -m -p $(openssl passwd -1 Cisco.123) user05
+RUN useradd -m -p $(openssl passwd -1 Cisco.123) user06
+RUN useradd -m -p $(openssl passwd -1 Cisco.123) user07
+RUN useradd -m -p $(openssl passwd -1 Cisco.123) user08
+RUN useradd -m -p $(openssl passwd -1 Cisco.123) user09
+RUN useradd -m -p $(openssl passwd -1 Cisco.123) user10
 
 
 # make VIM awesome. 
 ADD vimrc /root/.vimrc
 ADD vimsettings /root/.vim
+
+EXPOSE 22
+CMD ["/usr/sbin/sshd", "-D"]
