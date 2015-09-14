@@ -29,6 +29,8 @@ ADD vimsettings /root/.vim
 # make the .bash_profile look awesome
 ADD profile /etc/skel/.profile
 
+# install nano for people who can't handle VIM.  
+RUN apt-get install nano
 
 EXPOSE 22
 CMD ["/usr/sbin/sshd", "-D"]
