@@ -26,5 +26,9 @@ RUN useradd -m -p $(openssl passwd -1 Cisco.123) user10
 ADD vimrc /root/.vimrc
 ADD vimsettings /root/.vim
 
+# make the .bash_profile look awesome
+ADD profile /etc/skel/.profile
+
+
 EXPOSE 22
 CMD ["/usr/sbin/sshd", "-D"]
