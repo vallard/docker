@@ -30,7 +30,7 @@ ADD vimsettings /root/.vim
 ADD profile /etc/skel/.profile
 
 # install nano for people who can't handle VIM.  
-RUN apt-get install nano
+RUN apt-get install nano curl
 
 EXPOSE 22
 CMD ["/usr/sbin/sshd", "-D"]
