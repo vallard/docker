@@ -9,6 +9,9 @@ RUN pip install python-novaclient python-keystoneclient python-cinderclient pyth
 
 RUN service ssh start
 
+# make the .profile look awesome
+ADD profile /etc/skel/.profile
+
 # Add the users
 RUN useradd -m -p $(openssl passwd -1 Cisco.123) user01
 RUN useradd -m -p $(openssl passwd -1 Cisco.123) user02
@@ -26,11 +29,9 @@ RUN useradd -m -p $(openssl passwd -1 Cisco.123) user10
 ADD vimrc /root/.vimrc
 ADD vimsettings /root/.vim
 
-# make the .bash_profile look awesome
-ADD profile /etc/skel/.profile
 
 # install nano for people who can't handle VIM.  
-RUN apt-get install nano curl
+RUN apt-get install -y nano curl
 
 EXPOSE 22
 CMD ["/usr/sbin/sshd", "-D"]
