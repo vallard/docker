@@ -33,5 +33,9 @@ ADD vimsettings /root/.vim
 # install nano for people who can't handle VIM.  
 RUN apt-get install -y nano curl
 
+# add priv directory. 
+RUN mkdir -p /var/run/sshd
+RUN chmod 0755 /var/run/sshd
+
 EXPOSE 22
 CMD ["/usr/sbin/sshd", "-D"]
