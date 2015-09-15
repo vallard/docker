@@ -2,7 +2,7 @@ FROM ubuntu:latest
 MAINTAINER Vallard Benincosa "vallard@benincosa.com"
 RUN apt-get update
 # install the software
-RUN apt-get install -y python vim python-pip python-dev ssh nano curl
+RUN apt-get install -y python vim python-pip python-dev ssh nano curl ansible bash-completion
 
 # Install OpenStack Clients
 RUN pip install python-novaclient python-keystoneclient python-cinderclient python-heatclient python-glanceclient
