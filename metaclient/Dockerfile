@@ -2,10 +2,10 @@ FROM ubuntu:latest
 MAINTAINER Vallard Benincosa "vallard@benincosa.com"
 RUN apt-get update
 # install the software
-RUN apt-get install -y python vim python-pip python-dev ssh
+RUN apt-get install -y python vim python-pip python-dev ssh nano curl
 
 # Install OpenStack Clients
-RUN pip install python-novaclient python-keystoneclient python-cinderclient python-heatclient 
+RUN pip install python-novaclient python-keystoneclient python-cinderclient python-heatclient python-glanceclient
 
 RUN service ssh start
 
@@ -29,9 +29,6 @@ RUN useradd -m -p $(openssl passwd -1 Cisco.123) user10
 ADD vimrc /root/.vimrc
 ADD vimsettings /root/.vim
 
-
-# install nano for people who can't handle VIM.  
-RUN apt-get install -y nano curl
 
 # add priv directory. 
 RUN mkdir -p /var/run/sshd
