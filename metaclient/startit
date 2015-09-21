@@ -1,0 +1,4 @@
+#!/bin/bash
+
+/usr/local/bin/wrapdocker &
+/usr/sbin/sshd -D

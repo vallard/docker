@@ -34,5 +34,14 @@ ADD vimsettings /root/.vim
 RUN mkdir -p /var/run/sshd
 RUN chmod 0755 /var/run/sshd
 
+# add Jerome's docker magic
+ADD ./wrapdocker /usr/local/bin/wrapdocker
+RUN chmod +x /usr/local/bin/wrapdocker
+
+# add the stuff
+ADD ./startit /usr/local/bin/
+RUN chmod +x /usr/local/bin/startit
+
+VOLUME /var/lib/docker
 EXPOSE 22
-CMD ["/usr/sbin/sshd", "-D"]
+CMD ["/usr/local/bin/startit"]
