@@ -13,16 +13,16 @@ RUN pip install python-novaclient python-keystoneclient python-cinderclient pyth
 ADD profile /etc/skel/.profile
 
 # Add the users
-RUN useradd -m -G sudo -p $(openssl passwd -1 Cisco.123) user01 
-RUN useradd -m -G sudo -p $(openssl passwd -1 Cisco.123) user02
-RUN useradd -m -G sudo -p $(openssl passwd -1 Cisco.123) user03
-RUN useradd -m -G sudo -p $(openssl passwd -1 Cisco.123) user04
-RUN useradd -m -G sudo -p $(openssl passwd -1 Cisco.123) user05
-RUN useradd -m -G sudo -p $(openssl passwd -1 Cisco.123) user06
-RUN useradd -m -G sudo -p $(openssl passwd -1 Cisco.123) user07
-RUN useradd -m -G sudo -p $(openssl passwd -1 Cisco.123) user08
-RUN useradd -m -G sudo -p $(openssl passwd -1 Cisco.123) user09
-RUN useradd -m -G sudo -p $(openssl passwd -1 Cisco.123) user10
+RUN useradd -m -G sudo -p $(openssl passwd -1 Cisco.123) -s /bin/bash user01 
+RUN useradd -m -G sudo -p $(openssl passwd -1 Cisco.123) -s /bin/bash user02
+RUN useradd -m -G sudo -p $(openssl passwd -1 Cisco.123) -s /bin/bash user03
+RUN useradd -m -G sudo -p $(openssl passwd -1 Cisco.123) -s /bin/bash user04
+RUN useradd -m -G sudo -p $(openssl passwd -1 Cisco.123) -s /bin/bash user05
+RUN useradd -m -G sudo -p $(openssl passwd -1 Cisco.123) -s /bin/bash user06
+RUN useradd -m -G sudo -p $(openssl passwd -1 Cisco.123) -s /bin/bash user07
+RUN useradd -m -G sudo -p $(openssl passwd -1 Cisco.123) -s /bin/bash user08
+RUN useradd -m -G sudo -p $(openssl passwd -1 Cisco.123) -s /bin/bash user09
+RUN useradd -m -G sudo -p $(openssl passwd -1 Cisco.123) -s /bin/bash user10
 
 
 # make VIM awesome. 
