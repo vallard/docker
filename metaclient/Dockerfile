@@ -5,6 +5,7 @@ RUN apt-get update
 RUN apt-get install -y python vim python-pip python-dev ssh nano curl ansible bash-completion
 RUN apt-get update
 RUN apt-get install -y lxc docker docker.io iptables
+RUN apt-get install -y unzip
 
 # Install OpenStack Clients
 RUN pip install python-novaclient python-keystoneclient python-cinderclient python-heatclient python-glanceclient
@@ -41,6 +42,10 @@ RUN chmod +x /usr/local/bin/wrapdocker
 # add the stuff
 ADD ./startit /usr/local/bin/
 RUN chmod +x /usr/local/bin/startit
+
+# add Terraform
+ADD https://releases.hashicorp.com/terraform/0.6.8/terraform_0.6.8_linux_amd64.zip /tmp/
+RUN unzip /tmp/terraform_0.6.8_linux_amd64.zip -d /usr/local/bin/
 
 VOLUME /var/lib/docker
 EXPOSE 22
